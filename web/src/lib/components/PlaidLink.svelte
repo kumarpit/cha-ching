@@ -6,9 +6,9 @@
     let plaidLinkInstance: any = null;
 
     onMount(async () => {
-        // const res = await fetch("localhost:8080/create-link-token");
-        // const data = await res.json();
-        // linkToken = data.link_token;
+        const res = await fetch("api/create-link-token");
+        const data = await res.json();
+        linkToken = data.link_token;
 
         if (linkToken) {
             plaidLinkInstance = Plaid.initializePlaidLink(linkToken);
@@ -19,7 +19,6 @@
         if (plaidLinkInstance) {
             plaidLinkInstance.open();
         }
-        console.log("clicked");
     };
 </script>
 

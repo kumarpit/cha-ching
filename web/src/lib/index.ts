@@ -1,6 +1,5 @@
 export const Plaid = {
     initializePlaidLink: (linkToken: string) => {
-        console.log("here");
         if (!window.Plaid) {
             console.error("Plaid Link SDK not loaded");
             return null;
